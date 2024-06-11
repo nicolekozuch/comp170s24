@@ -18,6 +18,9 @@
  */
 public class A01 {
     public static void main(String[] args) {
-        // YOUR CODE HERE
+        String firstName = "Nicole";
+        String favMovie = "Scott Pilgrim vs. the World";
+        String hometown = "Round Lake";
+        System.out.println("\nHello, my name is " + firstName + ", I am from " + hometown + ", and my favorite movie is " + favMovie);
     } // method main
 } // class A01
