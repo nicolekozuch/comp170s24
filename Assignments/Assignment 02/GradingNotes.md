@@ -15,7 +15,7 @@ public static void main(String[] args) {
 
 Your breakdown of the tasks into separate groups doesn't have to be the same as mine. As long as the tasks in the methods you wrote are grouped by some defendable similarity, it's ok.
 
-What's important is to 
+What's important is to:
 
 * have 3-5 methods of your own in method main and nothing else;
-* your method names should sound like verbs;
+* name your methods as verbs/actions;
