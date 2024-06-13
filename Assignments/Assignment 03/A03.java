@@ -12,7 +12,19 @@ public class A03 {
             86, 88, 84, 82, 85, 87, 89, 90, 85, 84,
             86, 87, 88, 90, 85, 84, 86, 88, 85, 87,
             85
-        };        
+        };              
+
+        // Test countOf
+        System.out.println(countOf(78, june)); // expect 2
+        System.out.println(countOf(-78, june)); // expect 0
+
+        // Test find max/min
+        System.out.println(findMax(july)); // expect 90
+        System.out.println(findMin(july)); // expect 82
+
+        // Test isPresent
+        System.out.println(isPresent(20, july)); // expect false
+        System.out.println(isPresent(90, july)); // expect true
     } // method main
 
     /**
