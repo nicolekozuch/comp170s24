@@ -18,28 +18,27 @@ public class MoreLoops {
     }
 
     /**
-     * Tell if a given string is a word or not
+     * Tell if a given string is a word or not.
+     * 
+     * @param string String to evaluate
+     * @return true if string contains only letters, false otherwise including
+     * null and empty strings.
      */
     static boolean isWord(String string) {
-        int ascii_A = (int) 'A';
-        int ascii_a = (int) 'a';
-        int ascii_Z = (int) 'Z';
-        int ascii_z = (int) 'z';
-        boolean result = false;
-        if (string != null && string.length() > 0) {
-            // check out its contents one character at a time, ensuring that
-            // each and every character is a letter, A-Z or a-z
+        boolean possiblyAWord = false;
+        if (string.length() > 0 && string != null) {
+            possiblyAWord = true;
             int position = 0;
-            result = true;
-            while (position < string.length() && result) {
-                // The moment I find a non letter character, change result to false and
-                // end the loop. When a character is NOT a letter
-                int current = (int) string.charAt(position); // ASCII of current character
-                if (current < ascii_A) { result = false; } // less than A
-                if (current > ascii_z) { result = false; } // more than z
-                if (ascii_Z < current && current < ascii_a) { result = false; } // between Z-a
+            while (possiblyAWord && position < string.length()) {
+                char current = string.charAt(position);
+                if (current < 'A' || 
+                    current > 'z' || 
+                    (current > 'Z' && current < 'a')) {
+                        possiblyAWord = false;
+                }
+                position++;
             }
         }
-        return result;
+        return possiblyAWord;
     }
 }
