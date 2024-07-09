@@ -169,7 +169,7 @@ public class SophisticatedScanning {
     /**
      * Displays information about a file, specifically the number of lines in it.
      * 
-     * @param filename String path to file name to analyze.
+     * @param filename String filepath to file to analyze.
      */
     public static void reportLineCount(String filename) {
         // Number of lines is obtained from method countLines; if something goes wrong
