@@ -192,7 +192,7 @@ public class SophisticatedScanning {
         reportLineCount(rightFilename);
 
         System.out.println("\nDemo countElements:\n");
-        System.out.println(Arrays.toString(countElements(rightFilename)));
+        System.out.println(Arrays.toString(countElementsNeolithic(rightFilename)));
     } // method main
 
 } // class SophisticatedScanning
