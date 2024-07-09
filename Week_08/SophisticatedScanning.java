@@ -1,4 +1,5 @@
 import java.io.File;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -79,6 +80,30 @@ public class SophisticatedScanning {
         return lineCount;
     } // method countLines
 
+    public static int[] countElements(String filename) {
+        int[] description = {-1, -1, -1}; // [0] # of lines; [1] # of words; [2]: # of characters
+        Scanner sc = connectToFile(filename);
+        if (sc != null) {
+            // Do my counting
+            int countLines=0, countWords=0, countCharacters=0; // prefer one statement per variable
+            while (sc.hasNextLine()) {
+                countLines++;
+                String[] wordsFromCurrentLine = sc.nextLine().split(" ");
+                countWords = countWords + wordsFromCurrentLine.length;
+                // traverse word array to count characters
+                for (int i = 0; i < wordsFromCurrentLine.length; i++) {
+                    countCharacters = countCharacters + wordsFromCurrentLine[i].length();
+                }
+            }
+            // done scanning the file
+            sc.close(); // be nice
+            description[0] = countLines;
+            description[1] = countWords;
+            description[2] = countCharacters;
+        }
+        return description;
+    } // method countElements
+
     /**
      * Displays information about a file, specifically the number of lines in it.
      * 
@@ -103,6 +128,9 @@ public class SophisticatedScanning {
         String rightFilename = "Week_08/students.txt"; // existing file
         reportLineCount(wrongFilename);
         reportLineCount(rightFilename);
+        
+        System.out.println("\nDemo countElements:\n");
+        System.out.println(Arrays.toString(countElements(rightFilename)));
     } // method main
 
 } // class SophisticatedScanning
