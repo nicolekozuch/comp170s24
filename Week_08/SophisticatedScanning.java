@@ -7,6 +7,9 @@ import java.util.Scanner;
  */
 public class SophisticatedScanning {
 
+    private static final String ERROR_MESSAGE = "\nFile %s not available\n\n";
+    private static final String REPORT_MESSAGE = "\nFile %s has %d line(s)\n\n";
+
     /**
      * This method establishes a scanner connection to a specified file.
      * Instead of throwing a FileNotFoundException, the method returns
@@ -67,7 +70,7 @@ public class SophisticatedScanning {
                 lineCount++;
                 sc.nextLine();
             }
-            // Be nice and close the scanner
+            // Be nice and close the scanner when done using it.
             sc.close();
         }
         // At the end of the if-block the value of lineCount is either -1 because we
@@ -76,10 +79,30 @@ public class SophisticatedScanning {
         return lineCount;
     } // method countLines
 
-    public static void main(String[] args) {
-        String filename = "Week_007/students.txt";
-        System.out.printf("\nFile %s has %d line(s)\n\n\n",
-                filename, countLines(filename));
-    }
+    /**
+     * Displays information about a file, specifically the number of lines in it.
+     * 
+     * @param filename String path to file name to analyze.
+     */
+    public static void reportLineCount(String filename) {
+        // Number of lines is obtained from method countLines; if something goes wrong
+        // the reported number will be -1
+        int lineCount = countLines(filename);
+        if (lineCount == -1) {
+            // Something went wrong; inform the user
+            System.out.printf(ERROR_MESSAGE, filename);
+        } else {
+            // Report information obtained about the file.
+            System.out.printf(REPORT_MESSAGE, filename, lineCount);
+        }
+    } // method reportLineCount
 
-}
+    /** Driver code */
+    public static void main(String[] args) {
+        String wrongFilename = "Week_98/UX8qw114.txt"; // fictitious file
+        String rightFilename = "Week_08/students.txt"; // existing file
+        reportLineCount(wrongFilename);
+        reportLineCount(rightFilename);
+    } // method main
+
+} // class SophisticatedScanning
