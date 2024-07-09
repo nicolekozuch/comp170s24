@@ -40,9 +40,9 @@ public class SophisticatedScanning {
             sc = null;
         }
         // At this point, one of the two blocks of the try/catch scope
-        // above have executed. As a result there is a value assigned
+        // above has executed. As a result there is a value assigned
         // to the return variable. If something went wrong that value
-        // is null; otherwise, it's a scanner connect to the specified file.
+        // is null; otherwise, it's a scanner connected to the specified file.
         return sc;
     } // method connectToFile
 
