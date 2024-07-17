@@ -64,8 +64,8 @@ public class Date170 {
      * default value.
      * 
      * @param year  int with year value
-     * @param month int with month value (must be 1-12 inclusive; otherwise defaults
-     *              to 5)
+     * @param month int with month value (must be 1-12 inclusive; otherwise assigns
+     *              the default month value)
      * @param day   int with day value
      */
     public Date170(int year, int month, int day) {
