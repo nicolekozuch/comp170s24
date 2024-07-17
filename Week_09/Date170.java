@@ -38,7 +38,7 @@ public class Date170 {
      * All the rest have thirty-one, // Save February at twenty-eight
      * But leap year, coming once in four, // February then has one day more.
      * 
-     * @param month int month
+     * @param month int month; assumes it's a valid value between 1 and 12 inclusive
      * @param year int year in case month is February
      * @return 28, 29, 30, or 31
      */
