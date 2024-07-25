@@ -59,3 +59,5 @@ Look at the way I wrote the constructors in `Time_Solutions`. See how little cod
 Notice, also, how in my code, `add` and `substract` have virtually no repeated code. Instead there is one principal `add` method and the rest of the `add` and `subtract` methods feed into it. This is called *method wrapping* and it's a technique that you too will develop with practice and good design planning. 
 
 The first step towards developing such skills is to *review your code* a few hours after you wrote it. That's when you'll start seeing code repeatitions and other inefficiencies that you'll want to address.
+
+You may now notice similarities between my principal `add` method and methods `multiply` and `divide`. Can you find a way to improve my code by eliminating these redundancies?
