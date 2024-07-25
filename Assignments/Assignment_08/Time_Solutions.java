@@ -8,7 +8,7 @@ public class Time_Solutions {
     private static final int MINUTES_IN_HOUR = 60;
     private static final int SECONDS_IN_MINUTE = 60;
     private static final int SECONDS_IN_HOUR = MINUTES_IN_HOUR * SECONDS_IN_MINUTE;
-    private static final int AFTERNOON = 12; // for AM/PM conversions
+    private static final int NOON = 12; // for AM/PM conversions
 
     /** Object fields */
     private int hour;
