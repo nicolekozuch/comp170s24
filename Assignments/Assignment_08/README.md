@@ -174,7 +174,7 @@ Time t3 = new Time(11, 15, 20);
 
 System.out.println(t1); // Displays: 18:00:00 (6 PM)
 System.out.println(t2); // Displays: 06:00:00 (6 AM)
-System.out.println(t3); // Displays: 11:15:20 (11:20 AM)
+System.out.println(t3); // Displays: 11:15:20 (11:15 AM)
 ```
 
 ## Integer representation
