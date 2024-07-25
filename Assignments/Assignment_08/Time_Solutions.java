@@ -91,7 +91,7 @@ public class Time_Solutions {
         String meridiem = "AM";
         int displayHour = this.hour;
         if (displayHour > NOON) {
-            displayHour -= NOON;
+            displayHour -= NOON; // Notice the -= shortand
             meridiem = "PM";
         }
         return String.format("%02d:%02d:%02d (%02d:%02d %s)",
@@ -189,6 +189,5 @@ public class Time_Solutions {
         this.minute = newTime.getMinute();
         this.second = newTime.getSecond(); */
     } // method divide
-
-    
+  
 } // class time_solutions
