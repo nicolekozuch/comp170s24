@@ -5,9 +5,11 @@ public class Time_Solutions {
     private static final int DEFAULT_MINUTE = 0;
     private static final int DEFAULT_SECOND = 0;
 
+    private static final int HOURS_IN_DAY = 24;
     private static final int MINUTES_IN_HOUR = 60;
     private static final int SECONDS_IN_MINUTE = 60;
     private static final int SECONDS_IN_HOUR = MINUTES_IN_HOUR * SECONDS_IN_MINUTE;
+    private static final int SECONDS_IN_DAY = HOURS_IN_DAY * SECONDS_IN_HOUR;
     private static final int NOON = 12; // for AM/PM conversions
 
     /** Object fields */
@@ -44,7 +46,7 @@ public class Time_Solutions {
         this.hour = adjusted;
     } // integer constructor
 
-    /** Full constructor wraps to integer constructor*/
+    /** Full constructor wraps to integer constructor */
     public Time_Solutions(int hour, int minute, int second) {
         this(hour * SECONDS_IN_HOUR + minute * SECONDS_IN_MINUTE + second);
     } // full constructor
@@ -55,8 +57,13 @@ public class Time_Solutions {
      * also wrap to the integer constructor.
      */
     public Time_Solutions(int hour, int minute, int second, char meridiem) {
-        this((hour + ((meridiem == 'p' || meridiem == 'P' ? AFTERNOON : 0))) * SECONDS_IN_HOUR
-                + minute * SECONDS_IN_MINUTE + second);
+        // First create an object given the numeri valuves
+        this(hour, minute, second);
+        // Then check if it's a PM time, in which case add to the object the number of
+        // seconds corresponding to 12 hours.
+        if (meridiem == 'p' || meridiem == 'P') {
+            this.add(NOON * SECONDS_IN_HOUR);
+        }
     } // full constructor AM/PM
 
     /** Accessors */
@@ -137,7 +144,7 @@ public class Time_Solutions {
     public void multiply(int by) {
         int currentTimeInSeconds = this.toSeconds();
         int multipliedSeconds = by * currentTimeInSeconds;
-        Time newTime = new Time(multipliedSeconds);
+        Time_Solutions newTime = new Time_Solutions(multipliedSeconds);
         this.hour = newTime.getHour();
         this.minute = newTime.getMinute();
         this.second = newTime.getSecond();
@@ -155,10 +162,15 @@ public class Time_Solutions {
         }
         int currentTimeInSeconds = this.toSeconds();
         int dividedSeconds = currentTimeInSeconds / by;
-        Time newTime = new Time(dividedSeconds);
+        Time_Solutions newTime = new Time_Solutions(dividedSeconds);
         this.hour = newTime.getHour();
         this.minute = newTime.getMinute();
         this.second = newTime.getSecond();
     } // method divide
+
+    public static void main(String[] args) {
+        Time_Solutions t1 = new Time_Solutions(6, 1, 2, 'p');
+        System.out.println(t1);
+    }
 
 } // class time_solutions

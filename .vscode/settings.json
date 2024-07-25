@@ -1,6 +1,7 @@
 {
     "java.debug.settings.onBuildFailureProceed": true,
     "java.project.sourcePaths": [
+        "Week_10",
         "Week_09",
         "Week_08",
         "Week_07",
@@ -19,7 +20,7 @@
         "Assignments/Assignment 03",
         "Assignments/Assignment 02",
         "Assignments/Assignment 01",
-        "Week_10"
+        "Assignments/Assignment_08"
     ],
     "java.project.referencedLibraries": []
 }
