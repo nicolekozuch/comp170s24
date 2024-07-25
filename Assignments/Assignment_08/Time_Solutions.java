@@ -143,7 +143,7 @@ public class Time_Solutions {
      */
     public void multiply(int by) {
         int currentTimeInSeconds = this.toSeconds();
-        int multipliedSeconds = by * currentTimeInSeconds;
+        int multipliedSeconds = currentTimeInSeconds * by;
         Time_Solutions newTime = new Time_Solutions(multipliedSeconds);
         this.hour = newTime.getHour();
         this.minute = newTime.getMinute();
@@ -167,10 +167,5 @@ public class Time_Solutions {
         this.minute = newTime.getMinute();
         this.second = newTime.getSecond();
     } // method divide
-
-    public static void main(String[] args) {
-        Time_Solutions t1 = new Time_Solutions(6, 1, 2, 'p');
-        System.out.println(t1);
-    }
 
 } // class time_solutions
