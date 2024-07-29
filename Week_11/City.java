@@ -1,4 +1,4 @@
-public class City extends GeoEntity, SomethingElse {
+public class City extends GeoEntity {
 
     private boolean publicTransit;
     private boolean airport;
