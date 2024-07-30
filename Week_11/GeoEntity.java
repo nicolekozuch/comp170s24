@@ -25,7 +25,7 @@ public class GeoEntity {
 
     /** Accessor for this.name */
     public String getName() {
-        return (this.name == null) ? NO_DATA : this.name;
+        return this.name;
     } // method getName
 
     /** Accessor for this.population */

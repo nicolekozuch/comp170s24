@@ -46,7 +46,7 @@ public class City extends GeoEntity {
 
     /** Accessor for the name of this object's container -- the county's name */
     public String getCountyName() {
-        return this.getContainer().getName();
+        return (this.getContainer()==null)? super.NO_DATA: this.getContainer().getName();
     } // method getCountyName
 
     /** String representation */
