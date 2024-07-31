@@ -51,7 +51,7 @@ public class City extends GeoEntity {
 
     /** String representation */
     public String toString() {
-        return String.format("%s has a population of %,d\nThis city is in %s county",
+        return String.format("\n%s has a population of %,d\nThis city is in %s county",
                 this.getName(), this.getPopulation(), this.getCountyName());
     } // method toString
 } // class City

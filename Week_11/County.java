@@ -28,7 +28,7 @@ public class County extends GeoEntity {
     public String toString() {
         String countyName = (this == null) ? super.NO_DATA : this.getName();
         String seatName = (this.seat == null) ? super.NO_DATA : this.seat.getName();
-        return String.format("County: %s - Seat: %s",
+        return String.format("\nCounty: %s - Seat: %s",
                 countyName, seatName);
     } // method toString
 } // class County

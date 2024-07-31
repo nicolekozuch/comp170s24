@@ -46,6 +46,6 @@ public class GeoEntity {
     /** String representation */
     public String toString() {
         String containerName = (this.container != null) ? this.container.getName() : NO_DATA;
-        return String.format("Geographic entity: %s with population %d within %s");
+        return String.format("\nGeographic entity: %s with population %d within %s");
     } // method toString
 } // class GeoEntity
